@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.log('should download', releaseToDownload);
         const assetUrl = releaseToDownload.assets[0].browser_download_url;
         const content = await fetch(assetUrl, {
-            mode: 'no-cors',
             headers: {
                 'Content-Type': releaseToDownload.assets[0].content_type
             }
