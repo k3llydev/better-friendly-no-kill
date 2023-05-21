@@ -1,17 +1,10 @@
 async function getVersions() {
-    const octokit = new Octokit();
-    
-    const response = await octokit.request('GET /repos/{owner}/{repo}/releases', {
-        owner: 'k3llydev',
-        repo: 'better-friendly-no-kill',
-        headers: {
-            'X-GitHub-Api-Version': '2022-11-28'
-        }
+    return await fetch({
+        url: `https://api.github.com/repos/k3llydev/better-friendly-no-kill/releases`
     });
-
-    console.log('response', response)
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    getVersions();
+document.addEventListener('DOMContentLoaded', async () => {
+    const releases = await getVersions();
+    console.log('releases', releases);
 });
