@@ -1,5 +1,3 @@
-let RELEASES = [];
-
 function createOption(release, selected) {
     const option = document.createElement('option');
     option.value = release.id;
@@ -16,16 +14,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     const releases = await fetch('https://api.github.com/repos/k3llydev/better-friendly-no-kill/releases')
         .then(response => response.json())
         .catch(error => console.error(error));
-
-    RELEASES = [...releases];
     
     for(let i = 0; i < releases.length; i++) {
         versionsNode.appendChild(createOption(releases[i]), i === 0);
     }
 
-    getCodeButton.addEventListener('click', () => {
-        const releaseToDownload = RELEASES.find(r => r.id === versionsNode.value);
+    getCodeButton.addEventListener('click', async () => {
+        const releaseToDownload = releases.find(r => r.id == versionsNode.value);
         console.log('should download', releaseToDownload);
+        const assetUrl = releaseToDownload.assets[0].browser_download_url;
+        const content = await fetch(assetUrl).then(r => r.text());
+        console.log(content);
     });
 
 });
