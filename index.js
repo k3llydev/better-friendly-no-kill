@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const releaseToDownload = releases.find(r => r.id == versionsNode.value);
         console.log('should download', releaseToDownload);
         const assetUrl = releaseToDownload.assets[0].browser_download_url;
-        const content = await fetch(assetUrl).then(r => r.text());
+        const content = await fetch(assetUrl, { mode: 'no-cors'}).then(r => r.text());
         console.log(content);
     });
 
