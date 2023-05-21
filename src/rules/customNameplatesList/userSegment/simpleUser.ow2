@@ -1,5 +1,0 @@
-Array(
-    Custom String("<%= user.name %>"),
-    <%- include('nicknames/nicknameRender.ow2', { customNicknames: user.customNicknames }) -%>,
-    <%- include('colors/colorRender.ow2', { user }) -%>
-)<%= $helpers.renderIf(!isLast, ',') %>
