@@ -1,0 +1,23 @@
+rule("Custom nameplates list")
+{
+	event
+	{
+		Ongoing - Global;
+	}
+
+	actions
+	{
+		Global.Titles_And_Outlines = Array(
+			<%
+				users.forEach((user, index) => {
+			%><%-
+				include('userSegment/simpleUser.ow2', {
+					user,
+					isLast: users.length === index + 1
+				}); 
+			-%><%
+				})
+			%>
+		);
+	}
+}
