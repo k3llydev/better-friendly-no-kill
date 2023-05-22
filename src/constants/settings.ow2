@@ -2,8 +2,8 @@ settings
 {
 	main
 	{
-		Description: "♥ A Friendly Server ♥\nlast updated (May 17 2023)\r: \n\n• !You Will Get Banned If You Kick Auto Angels!\n• Hold 'R' (reload) to enable/disable protection\n• Hold 'V' (melee) to change hero\n• Hold 'F' (interact) to switch camera \n \n Coded and maintained by: \n TbyCoLive, Warloy, xMaxuss, LƐafa.\n \n A rework tribute to:\n \rǴARŊE, ElCasT & CoolDot \n \n Thank you for hanging out!"
-		Mode Name: "Better Friendly ♥ No Kill! "
+		Description: "♥ A Friendly Server ♥\n\n\n• Hold 'R' (reload) to enable/disable protection\n• Hold 'V' (melee) to change hero\n• Hold 'F' (interact) to switch camera \n \n Credits to the original workshop:\n TbyCoLive, Warloy, xMaxuss, LƐafa, ǴARŊE, ElCasT & CoolDot"
+		Mode Name: "Better Friendly ♥ No Kill!"
 	}
 
 	lobby
