@@ -1,0 +1,177 @@
+:root {
+    --primary: #f99e1a;
+    --secondary: #43484c;
+    --third: #405275;
+    --fourth: #218ffe;
+    --contrast: #000000;
+    --success: #198754;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+    background: var(--secondary);
+}
+
+@font-face {
+    font-family: "BigNoodleTitling";
+    src: url('big_noodle_titling.ttf');
+}
+
+@font-face {
+    font-family: "Config";
+    src: url('ConfigCondensed-Regular.otf');
+}
+
+#loadingVeil {
+    background: rgba(0,0,0,0.99);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#loadingVeil.hide {
+    animation: hideLoadingVeil 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes hideLoadingVeil {
+    0% {
+        opacity: 1;
+    }
+    35% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+#loadingVeil svg {
+    position: relative !important;
+    top: 50% !important;
+    transform: translateY(-50%);
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 720px;
+}
+
+.overwatch-logo {
+    max-width: 100%;
+    margin-top: 80px;
+}
+
+.title {
+    font-size: 3rem;
+    text-align: center;
+    color: white;
+    font-family: "BigNoodleTitling";
+    letter-spacing: 0.25rem;
+}
+
+#versions {
+    padding: 0.5rem 1rem;
+    width: 100%;
+    border: none;
+    border-radius: 15px 0 0 15px;
+    font-family: "BigNoodleTitling";
+    font-size: 1.5rem;
+}
+
+#getCode {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.5rem 2.5rem;
+    background: var(--primary);
+    border: none;
+    font-size: 1.5rem;
+    border-radius: 0 15px 15px 0;
+    font-weight: bold;
+    color: var(--contrast);
+    white-space: nowrap;
+    font-family: "BigNoodleTitling";
+}
+
+#getCode:hover {
+    cursor: pointer;
+}
+
+#getCode.copying {
+    
+}
+
+#getCode.copying.success {
+    background: var(--success);
+}
+
+.main-actions {
+    display: flex;
+}
+
+.title-button {
+    text-align: center;
+    color: var(--fourth);
+    font-size: 2rem;
+    font-family: "Config";
+    cursor: pointer;
+}
+
+#usageManual:not(.open) {
+    display: none;
+}
+
+#usageManual {
+    font-family: "Config";
+    position: fixed;
+    overflow-y: scroll;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.80);
+}
+
+#usageManual .manual-content {
+    background: white;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 120px;
+    padding-bottom: 1.5rem;
+}
+
+#usageManual .manual-content p {
+    padding: 0 1.5rem;
+}
+
+#usageManual .manual-content button.accept-btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.5rem 2.5rem;
+    background: var(--primary);
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--contrast);
+    white-space: nowrap;
+    font-family: "BigNoodleTitling";
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+#usageManual .manual-title {
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+}
+
+#usageManual img {
+    max-width: 100%;
+}
