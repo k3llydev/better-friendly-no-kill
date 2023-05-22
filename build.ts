@@ -2,7 +2,7 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 import { MongoClient } from 'mongodb';
 import { renderFile } from 'ejs';
-import { writeFileSync } from 'fs';
+import { existsSync, mkdirSync, writeFileSync } from 'fs';
 import { helpers as $helpers } from './utils/helpers';
 
 if(!process.env.MONGO_URL) throw new Error('Mongo URL was not provided.');
@@ -18,6 +18,7 @@ const client = new MongoClient(process.env.MONGO_URL);
 
     renderFile('./src/index.ow2', { users, $helpers }, (error, content) => {
         if(error) return console.error(error);
+        if(!existsSync('./out')) mkdirSync('./out');
         writeFileSync('./out/BetterFriendlyNoKill.ow2', content);
         console.log('Build success!');
     });
