@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     
     for(let i = 0; i < releases.length; i++) {
-        versionsNode.appendChild(createOption(releases[i]), i === 0);
+        versionsNode.appendChild(createOption(releases[i], i === 0));
     }
 
     setTimeout(() => {
