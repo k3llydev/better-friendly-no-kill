@@ -1,8 +1,8 @@
-function createOption(release, selected) {
+function createOption(release, isLatest) {
     const option = document.createElement('option');
     option.value = release.id;
-    option.innerText = release.name;
-    option.selected = selected;
+    option.innerText = release.name + (isLatest ? ' (latest)' : '');
+    option.selected = isLatest;
     return option;
 }
 
