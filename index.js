@@ -39,11 +39,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         const releaseToDownload = releases.find(r => r.id == versionsNode.value);
         const assetUrl = releaseToDownload.assets[0].browser_download_url;
-        const content = await fetch('https://api.codetabs.com/v1/proxy?quest=' + assetUrl, {
-            headers: {
-                'Content-Type': releaseToDownload.assets[0].content_type
-            }
-        })
+        const content = await fetch('https://api.codetabs.com/v1/proxy?quest=' + assetUrl)
             .then(r => r.text())
             .catch(error => {
                 // TODO: Determine possible error cases
