@@ -58,6 +58,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             }, 2500);
         }, (error) => {
             // Error while copying to clipboard
+            getCodeButton.classList.remove('copying');
+            getCodeButton.innerText = 'Copy workshop code!';
             alert('Something went wrong while trying to copy the workshop. Please try again or contact the creator of this site.');
             console.error(error);
         });
